@@ -12,13 +12,14 @@ RainDrop.prototype.renderSeed = function () {
   $('body').append(this.$seed);
 };
 
-RainDrop.prototype.addDrop = function (increment) {
+RainDrop.prototype.addDrop = function (increment, color) {
   var size = this.$largestDrop.width() + increment;
   var $drop = $("<div></div>").css({
     borderWidth : this.borderWidth,
     borderStyle : this.borderStyle,
     width: size,
-    height: size
+    height: size,
+    borderColor : color
   });
   this.$largestDrop.append($drop);
   this.$largestDrop = $drop;
