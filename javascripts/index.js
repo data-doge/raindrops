@@ -1,11 +1,10 @@
 var rainDropInterval;
 var maxBorderWidth = 20;
 var maxSpeed = 2;
+var borderStyles = ['solid', 'dotted', 'dashed', 'double'];
+var colors = ['#52656B', '#FF3B77', '#CDFF00', 'B8B89F'];
 
 $(window).load(function() {
-
-  var borderStyles = ['solid', 'dotted', 'dashed', 'double'];
-  var colors = ['#52656B', '#FF3B77', '#CDFF00', 'B8B89F'];
 
   $(document).on('keyup', function(e) {
 
@@ -13,16 +12,16 @@ $(window).load(function() {
 
       clearInterval(rainDropInterval);
       $('body').html('');
-      var borderWidth = randPosInt(maxBorderWidth);
-      var borderStyle = sampleFromArray(borderStyles);
       var speed = randPosInt(maxSpeed);
-      var rainDrop = new RainDrop(borderWidth, borderStyle);
+      var rainDrop = new RainDrop({
+        borderWidth : randPosInt(maxBorderWidth),
+        borderStyle : sampleFromArray(borderStyles)
+      });
       rainDrop.renderSeed();
 
       var i = 0;
       rainDropInterval = setInterval(function() {
-        var color = sampleFromArray(colors);
-        rainDrop.addDrop(speed, color);
+        rainDrop.addDrop(speed, sampleFromArray(colors));
         scroll();
         i++;
         if (rainDrop.$largestDrop.width() > $(window).width() * 1.3) {

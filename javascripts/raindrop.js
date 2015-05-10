@@ -1,6 +1,6 @@
-function RainDrop (borderWidth, borderStyle) {
-  this.borderWidth = borderWidth;
-  this.borderStyle = borderStyle;
+function RainDrop (options) {
+  this.borderWidth = options.borderWidth;
+  this.borderStyle = options.borderStyle;
   this.$seed = $("<div></div>").css({
     borderWidth : this.borderWidth,
     borderStyle : this.borderStyle
