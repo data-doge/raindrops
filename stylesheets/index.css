@@ -1,7 +1,11 @@
 html, body {
   position: relative;
   height: 100%;
+}
+
+body {
   margin: 0;
+  text-align: center;
 }
 
 div {
@@ -10,8 +14,15 @@ div {
   border: 5px solid black;
 }
 
-h1 {
+p {
+  display: none;
   font-family: 'Roboto';
-  text-align: center;
-  font-size: 80px;
+  font-size: 40px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+span {
+  color: #FF3B77;
 }

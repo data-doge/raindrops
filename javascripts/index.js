@@ -6,6 +6,8 @@ var colors = ['#52656B', '#FF3B77', '#CDFF00', 'B8B89F'];
 
 $(window).load(function() {
 
+  $('p').fadeIn(2000);
+
   $(document).on('keyup', function(e) {
 
     if (e.keyCode === 13) {
