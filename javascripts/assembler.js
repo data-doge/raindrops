@@ -8,7 +8,7 @@ function Assembler () {
 }
 
 Assembler.prototype.reset = function () {
-  clearInterval(this.interval);
+  clearInterval(this.animation);
   $('body').html('');
   this.rainDrop = new RainDrop({
     borderWidth : randPosInt(this.maxBorderWidth),
