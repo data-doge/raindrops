@@ -7,6 +7,6 @@ function sampleFromArray (array) {
   return array[randPosInt(length) - 1];
 }
 
-function scroll () {
+function scrollPage () {
   window.scrollTo(document.body.scrollHeight,document.body.scrollHeight);
 }
